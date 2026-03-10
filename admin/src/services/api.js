@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:5000';
+// const API_BASE = 'http://localhost:5000';
+const API_BASE = 'https://samethaluapp.onrender.com';
 
 const api = axios.create({ baseURL: API_BASE });
 
