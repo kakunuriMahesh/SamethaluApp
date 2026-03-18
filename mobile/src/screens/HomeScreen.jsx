@@ -55,11 +55,6 @@ export default function HomeScreen({ navigation }) {
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={COLORS.gold} />}
         ListHeaderComponent={
           <>
-            <View style={styles.header}>
-              <Text style={styles.headerTitle}>🌿 సామెతలు</Text>
-              <Text style={styles.headerSub}>Telugu Proverbs</Text>
-            </View>
-
             {/* Sametha of the Day */}
             {dayOf && (
               <TouchableOpacity
@@ -94,12 +89,28 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: COLORS.bg, paddingTop: 50 },
+  container: { flex: 1, backgroundColor: COLORS.bg },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 40 },
   list: { padding: 16 },
-  header: { marginBottom: 20, marginTop: 8 },
+  header: { 
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
+    alignItems: 'center',
+    marginBottom: 20, 
+    marginTop: 8 
+  },
   headerTitle: { fontSize: 26, fontWeight: '800', color: COLORS.textPrimary },
   headerSub: { fontSize: 12, color: COLORS.textMuted, marginTop: 2 },
+  infoBtn: {
+    width: 44,
+    height: 44,
+    borderRadius: 12,
+    backgroundColor: COLORS.bgCard,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   dayCard: {
     backgroundColor: COLORS.bgCard,
     borderRadius: 18,
@@ -119,4 +130,60 @@ const styles = StyleSheet.create({
   readMore: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   readMoreText: { fontSize: 13, fontWeight: '600', color: COLORS.gold },
   sectionTitle: { fontSize: 16, fontWeight: '700', color: COLORS.textPrimary, marginBottom: 12 },
+
+  // Modal Styles
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'flex-end',
+  },
+  modalContent: {
+    backgroundColor: COLORS.bgCard,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    maxHeight: '70%',
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.border,
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: COLORS.textPrimary,
+  },
+  modalBody: {
+    padding: 16,
+  },
+  infoOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 16,
+    paddingHorizontal: 12,
+    marginBottom: 8,
+    backgroundColor: COLORS.bg,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  optionContent: {
+    flex: 1,
+    marginLeft: 12,
+  },
+  optionTitle: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: COLORS.textPrimary,
+    marginBottom: 4,
+  },
+  optionDesc: {
+    fontSize: 12,
+    color: COLORS.textMuted,
+  },
 });
