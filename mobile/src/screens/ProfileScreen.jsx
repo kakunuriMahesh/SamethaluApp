@@ -8,12 +8,12 @@ const ProfileScreen = ({ navigation }) => {
 
   const handlePrivacyPolicy = () => {
     // Replace with your actual privacy policy URL
-    Linking.openURL('https://your-privacy-policy-url.com');
+    Linking.openURL('https://lemonchiffon-heron-497115.hostingersite.com/samethalu_policies.html');
   };
 
   const handleTermsConditions = () => {
     // Replace with your actual terms & conditions URL
-    Linking.openURL('https://your-terms-conditions-url.com');
+    Linking.openURL('https://lemonchiffon-heron-497115.hostingersite.com/samethalu_terms.html');
   };
 
   const options = [
